@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rudra Deshmukh | Resume</title>
+  <meta
+    name="description"
+    content="Resume of Rudra Deshmukh, a final-year Computer Science Engineering student focused on Python full stack development, AI projects, and entry-level software opportunities."
+  />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1a2d;
+      --panel: rgba(10, 20, 36, 0.9);
+      --panel-strong: #0f1d32;
+      --panel-alt: #12243d;
+      --text: #edf3ff;
+      --muted: #9fb0ca;
+      --line: rgba(159, 176, 202, 0.18);
+      --accent: #56d4ff;
+      --accent-strong: #2bb4e5;
+      --accent-soft: rgba(86, 212, 255, 0.12);
+      --highlight: #9cf3d0;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --max-width: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(43, 180, 229, 0.16), transparent 26%),
+        radial-gradient(circle at 85% 12%, rgba(156, 243, 208, 0.12), transparent 22%),
+        linear-gradient(180deg, #07111f 0%, #081522 45%, #0a1628 100%);
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .shell {
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
+      display: grid;
+      gap: 22px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(7, 17, 31, 0.72);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), #7f8cff);
+      color: #04111d;
+      font-weight: 800;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-weight: 700;
+      transition: 180ms ease;
+      cursor: pointer;
+    }
+
+    .action-btn:hover,
+    .action-btn:focus-visible {
+      border-color: rgba(86, 212, 255, 0.5);
+      background: rgba(86, 212, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .action-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #78e7ff);
+      color: #04111d;
+      border-color: transparent;
+      box-shadow: 0 14px 30px rgba(43, 180, 229, 0.3);
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 330px minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    .sidebar,
+    .content {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .sidebar {
+      padding: 26px;
+      display: grid;
+      gap: 22px;
+      align-content: start;
+      position: sticky;
+      top: 24px;
+      background:
+        linear-gradient(180deg, rgba(86, 212, 255, 0.08), transparent 24%),
+        var(--panel);
+    }
+
+    .photo-card {
+      width: min(100%, 230px);
+      margin: 0 auto;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    }
+
+    .photo-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1.05;
+      object-fit: cover;
+    }
+
+    .status-pill,
+    .mini-pill,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .status-pill {
+      padding: 10px 14px;
+      background: rgba(156, 243, 208, 0.12);
+      border: 1px solid rgba(156, 243, 208, 0.24);
+      color: var(--highlight);
+      font-size: 0.88rem;
+    }
+
+    .side-block {
+      display: grid;
+      gap: 12px;
+    }
+
+    .side-title,
+    .section-title,
+    .hero-name,
+    .card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    .side-title {
+      font-size: 0.96rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .side-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .side-list a:hover,
+    .side-list a:focus-visible {
+      color: var(--text);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      color: #d8e7ff;
+      font-size: 0.92rem;
+    }
+
+    .content {
+      padding: 28px;
+      display: grid;
+      gap: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(86, 212, 255, 0.08), transparent 24%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
+        var(--panel-strong);
+    }
+
+    .hero-card {
+      border-radius: 28px;
+      padding: 28px;
+      background:
+        linear-gradient(135deg, rgba(86, 212, 255, 0.08), rgba(255, 255, 255, 0.02)),
+        rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(86, 212, 255, 0.2);
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 18px currentColor;
+    }
+
+    .hero-name {
+      font-size: clamp(2.6rem, 6vw, 4.7rem);
+      line-height: 0.95;
+      max-width: 10ch;
+    }
+
+    .hero-role {
+      color: var(--highlight);
+      font-size: 1.08rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-summary {
+      max-width: 66ch;
+      color: #d5e2f7;
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mini-pill {
+      padding: 10px 13px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      color: #d8e7ff;
+      font-size: 0.9rem;
+    }
+
+    .stats-card {
+      min-width: 220px;
+      padding: 18px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(18, 36, 61, 0.95), rgba(9, 19, 33, 0.95));
+      border: 1px solid rgba(86, 212, 255, 0.18);
+      display: grid;
+      gap: 14px;
+    }
+
+    .stat-line strong {
+      display: block;
+      font-size: 1.7rem;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+    }
+
+    .stat-line span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      display: grid;
+      gap: 14px;
+    }
+
+    .section-title {
+      font-size: 1.08rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.015)),
+        var(--panel-alt);
+      display: grid;
+      gap: 12px;
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: start;
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+      line-height: 1.25;
+    }
+
+    .card-meta {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .card-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(86, 212, 255, 0.1);
+      border: 1px solid rgba(86, 212, 255, 0.2);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.88rem;
+      width: fit-content;
+    }
+
+    .card p,
+    .list {
+      color: #d4def0;
+      line-height: 1.7;
+    }
+
+    .list {
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-note {
+      padding: 6px 4px 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 1024px) {
+      .resume-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 14px;
+      }
+
+      .topbar,
+      .content,
+      .sidebar,
+      .hero-card {
+        border-radius: 24px;
+      }
+
+      .topbar {
+        padding: 14px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .content,
+      .sidebar {
+        padding: 20px;
+      }
+
+      .hero-card {
+        padding: 20px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .top-actions > * {
+        flex: 1 1 220px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        color: #111111;
+        padding: 0;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .resume-grid {
+        grid-template-columns: 290px 1fr;
+        gap: 0;
+      }
+
+      .sidebar,
+      .content,
+      .hero-card,
+      .card {
+        background: #ffffff;
+        color: #111111;
+        box-shadow: none;
+        border-color: #d8d8d8;
+      }
+
+      .hero-card,
+      .card,
+      .side-block {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .side-list,
+      .card p,
+      .list,
+      .card-meta,
+      .footer-note,
+      .hero-summary,
+      .mini-pill,
+      .tag {
+        color: #333333;
+      }
+
+      .section-title,
+      .side-title,
+      .eyebrow,
+      .card-badge,
+      .hero-role,
+      .status-pill {
+        color: #0b4d78;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <div class="brand">
+        <span class="brand-mark">RD</span>
+        <span>Resume View</span>
+      </div>
+
+      <div class="top-actions">
+        <a class="action-btn" href="index.html">Back to Portfolio</a>
+        <button class="action-btn primary" onclick="window.print()">Print Resume</button>
+      </div>
+    </div>
+
+    <div class="resume-grid">
+      <aside class="sidebar">
+        <div class="photo-card">
+          <img src="ProfilePic.png" alt="Rudra Deshmukh profile photo" />
+        </div>
+
+        <div class="status-pill">Open to full-time opportunities</div>
+
+        <section class="side-block">
+          <h2 class="side-title">Contact</h2>
+          <ul class="side-list">
+            <li><a href="mailto:rudradeshmukh1312@gmail.com">rudradeshmukh1312@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/rudra-deshmukh-45b395277/" target="_blank" rel="noreferrer">linkedin.com/in/rudra-deshmukh-45b395277</a></li>
+            <li><a href="https://github.com/rudradeshmukh1312" target="_blank" rel="noreferrer">github.com/rudradeshmukh1312</a></li>
+          </ul>
+        </section>
+
+        <section class="side-block">
+          <h2 class="side-title">Core Skills</h2>
+          <div class="tag-cloud">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </section>
+
+        <section class="side-block">
+          <h2 class="side-title">Strengths</h2>
+          <div class="tag-cloud">
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Analytical Thinking</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Adaptability</span>
+          </div>
+        </section>
+
+        <section class="side-block">
+          <h2 class="side-title">Certifications</h2>
+          <ul class="side-list">
+            <li>NPTEL - Enhancing Soft Skills</li>
+            <li>AWS - Machine Learning</li>
+            <li>NPTEL - Big Data Computing</li>
+            <li>upGrad - Basic Python Programming</li>
+            <li>AWS - AI/ML</li>
+            <li>AWS - Cloud Foundation</li>
+            <li>AI/ML Virtual Internship</li>
+          </ul>
+        </section>
+
+        <section class="side-block">
+          <h2 class="side-title">Activities</h2>
+          <div class="tag-cloud">
+            <span class="tag">Rotaract Club</span>
+            <span class="tag">Student Member</span>
+            <span class="tag">Volunteer Community</span>
+            <span class="tag">Team Participation</span>
+          </div>
+        </section>
+      </aside>
+
+      <main class="content">
+        <section class="hero-card">
+          <div class="hero-top">
+            <div>
+              <div class="eyebrow"> Software Engineer</div>
+              <h1 class="hero-name">Rudra Deshmukh</h1>
+              <p class="hero-role">Python Full Stack | AI Projects | 2026 Graduate</p>
+            </div>
+
+            <div class="stats-card">
+              <div class="stat-line">
+                <strong>2026</strong>
+                <span>Computer Science Engineering student preparing for full-time opportunities</span>
+              </div>
+              <div class="stat-line">
+                <strong>3+</strong>
+                <span>Academic and personal projects across AI, AR, and web apps</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="hero-summary">
+            Final-year computer science engineering student focused on building useful software with Python, Flask, and applied AI. I enjoy turning ideas into practical products, learning quickly in new environments, and contributing with a calm, problem-solving mindset.
+          </p>
+
+          <div class="hero-meta">
+            <span class="mini-pill">Python Full Stack</span>
+            <span class="mini-pill">Flask + Databases</span>
+            <span class="mini-pill">AI-Driven Projects</span>
+            <span class="mini-pill">Ready for full-time roles</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Experience</h2>
+          <div class="cards">
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>Python Full Stack Developer Virtual Internship, EduSkills</h3>
+                  <div class="card-meta">July 2025 - September 2025</div>
+                </div>
+                <div class="card-badge">Internship</div>
+              </div>
+              <ul class="list">
+                <li>Worked on end-to-end web application development using Python, Flask, HTML, CSS, and MySQL.</li>
+                <li>Built understanding of backend logic, frontend structure, and database-driven workflows.</li>
+                <li>Strengthened project execution skills through hands-on implementation of full stack concepts.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Projects</h2>
+          <div class="cards">
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>Virtual Dressing Room</h3>
+                  <div class="card-meta">Augmented reality and computer vision concept</div>
+                </div>
+                <div class="card-badge">AR Project</div>
+              </div>
+              <ul class="list">
+                <li>Developed an augmented reality-based dressing room for real-time clothing overlay.</li>
+                <li>Applied computer vision concepts to track body positioning and improve interaction quality.</li>
+                <li>Focused on delivering a more practical and engaging try-before-you-buy experience.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>AgroSense - AI Powered Soil Analysis and Crop Recommendation</h3>
+                  <div class="card-meta">Flask backend with AI and IoT-assisted inputs</div>
+                </div>
+                <div class="card-badge">AI + IoT</div>
+              </div>
+              <ul class="list">
+                <li>Built an AI-based crop recommendation system using soil image analysis and weather API integration.</li>
+                <li>Included IoT hardware inputs such as Arduino and sensors for soil pH and moisture measurement.</li>
+                <li>Used Flask and NumPy to support data-driven recommendations for agricultural use cases.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>SyntaxYaar AI Bot</h3>
+                  <div class="card-meta">Conversational assistant built with Python</div>
+                </div>
+                <div class="card-badge">Chatbot</div>
+              </div>
+              <ul class="list">
+                <li>Created an AI-powered chatbot to handle user queries with prompt-driven conversational flows.</li>
+                <li>Improved contextual responses by designing structured interactions and backend logic.</li>
+                <li>Focused on scalable, real-time query handling for better usability.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+          <div class="split">
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>B.Tech, Nagpur Institute of Technology, Nagpur</h3>
+                  <div class="card-meta">Computer Science Engineering | 2026</div>
+                </div>
+                <div class="card-badge">CGPA up to 7th Sem</div>
+              </div>
+              <p>Focused on software development fundamentals, problem solving, and applied computing projects.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>HSC, Sudhakar Naik Junior College, Akola</h3>
+                  <div class="card-meta">2022</div>
+                </div>
+                <div class="card-badge">72.50%</div>
+              </div>
+              <p>Completed higher secondary education with a foundation for engineering studies.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>SSC, Jubilee English High School, Akola</h3>
+                  <div class="card-meta">2020</div>
+                </div>
+                <div class="card-badge">90.80%</div>
+              </div>
+              <p>Built strong academic fundamentals early, especially in structured learning and consistency.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Achievements & Extra-Curricular</h2>
+          <div class="cards">
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>Academic and professional highlights</h3>
+                  <div class="card-meta">Publications, certifications, and applied learning</div>
+                </div>
+                <div class="card-badge">Achievements</div>
+              </div>
+              <ul class="list">
+                <li>Received publication certificates for Virtual Dressing Room and AI-powered crop recommendation project work.</li>
+                <li>Completed certifications in AWS, NPTEL, Python full stack development, machine learning, and soft skills.</li>
+                <li>Built practical readiness through project-based learning and a Python Full Stack virtual internship.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <h3>Leadership and community involvement</h3>
+                  <div class="card-meta">Student participation beyond academics</div>
+                </div>
+                <div class="card-badge">Activities</div>
+              </div>
+              <ul class="list">
+                <li>Student Member, Rotaract Club, NIT Nagpur.</li>
+                <li>Member of a volunteer community, contributing to collaborative and support-oriented activities.</li>
+                <li>Interested in teamwork-led initiatives that strengthen communication, responsibility, and people skills.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <p class="footer-note">
+          This resume page now uses a separate dark visual identity so it feels different from the main portfolio while keeping the content professional and easy to scan.
+        </p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
